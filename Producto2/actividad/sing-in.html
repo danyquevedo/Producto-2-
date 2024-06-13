@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <title>Registro</title>
+  <script>
+    function storeName() {
+      const firstName = document.getElementById('first-name').value;
+      localStorage.setItem('firstName', firstName);
+    }
+  </script>
+  <style>
+    /* Agrega estilos adicionales para dispositivos móviles */
+    @media only screen and (max-width: 600px) {
+      .wrapper {
+        width: 80%; /* Ancho ajustado para dispositivos móviles */
+      }
+
+      .input-field input {
+        max-width: 200px; /* Ancho máximo ajustado para dispositivos móviles */
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <h2>Registro</h2>
+    <form action="index2.html" method="POST" onsubmit="storeName()">
+      <div class="input-field">
+        <input type="text" id="first-name" name="first_name" placeholder="Nombre" required>
+        <i class="bx bxs-user"></i>
+      </div>
+      <div class="input-field">
+        <input type="text" id="last-name" name="last_name" placeholder="Apellido" required>
+        <i class="bx bxs-user"></i>
+      </div>
+      <div class="input-field">
+        <input type="email" id="email" name="email" placeholder="Email address" required>
+        <i class="bx bxs-envelope"></i>
+      </div>
+      <div class="input-field">
+        <input type="password" id="password" name="password" placeholder="Password" required>
+        <i class="bx bxs-lock-alt"></i>
+      </div>
+      <button type="submit" class="login">Registrar</button>
+    </form>
+  </div>
+</body>
+</html>
